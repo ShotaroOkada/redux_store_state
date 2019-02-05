@@ -10,12 +10,12 @@ const Countreducer = (state: ICountState = initialState, action: CountAction): I
     switch(action.type){
         case CountActionType.COUNT_UP:
         return{
-            count: state.count++
+            count: state.count + 1
         };
 
         case CountActionType.COUNT_DOWN:
         return{
-            count: state.count--
+            count: state.count - 1
         };
 
         default: 

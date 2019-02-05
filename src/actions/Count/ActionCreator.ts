@@ -2,16 +2,14 @@ import { ICountUPAction, ICountDownAction } from './Action';
 import { CountActionType } from './ActionType';
 
 
-export function countUp(count: number): ICountUPAction{
+export function countUp(): ICountUPAction{
     return{
-        count,
         type: CountActionType.COUNT_UP
     }
 }
 
-export function countDown(count: number): ICountDownAction{
+export function countDown(): ICountDownAction{
     return{
-        count,
         type: CountActionType.COUNT_DOWN
     }
 }
