@@ -1,11 +1,17 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './App';
-import './index.css';
-import registerServiceWorker from './registerServiceWorker';
+import { ICountState } from './states/CountState';
+import { createStore, Store } from 'redux';
+import Countreducer from './reducers/Count/reducer';
+import { Provider } from 'react-redux';
+
+const store: Store<ICountState> = createStore(Countreducer);
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+  <App />
+  </Provider>,
   document.getElementById('root') as HTMLElement
 );
-registerServiceWorker();
+
